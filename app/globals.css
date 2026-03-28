@@ -50,14 +50,14 @@ body {
   position: fixed;
   border-radius: 50%;
   filter: blur(60px);
-  z-index: -1;
-  opacity: 0.6;
+  z-index: -2;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 .sphere-purple {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   background: #8b5cf6;
   top: -100px;
   left: -50px;
@@ -65,10 +65,10 @@ body {
 }
 
 .sphere-orange {
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   background: #f97316;
-  bottom: -150px;
+  bottom: -50px;
   right: -100px;
   animation: float 25s infinite alternate-reverse ease-in-out;
 }
@@ -85,6 +85,37 @@ body {
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
+
+/* Large centered glass plate (site-wide decorative background) */
+.glass-plate {
+  position: fixed;
+  left: 50%;
+  top: 18%;
+  transform: translateX(-50%);
+  width: min(1100px, 92vw);
+  height: min(480px, 46vh);
+  border-radius: 32px;
+  z-index: -1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+
+
+/* Colorful blurred circles placed around/inside the plate to mimic the reference */
+.plate-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+.plate-circle-1 { width: 100px; height: 100px; background: #10b981; left: 6%; top: 8%; }
+.plate-circle-2 { width: 200px; height: 200px; background: #f59e0b; right: 4%; top: -40px; }
+.plate-circle-3 { width: 120px; height: 120px; background: #ef4444; left: 20%; bottom: -30px; }
+.plate-circle-4 { width: 80px; height: 80px; background: #06b6d4; right: 20%; bottom: 18px; }
+.plate-circle-5 { width: 64px; height: 64px; background: #ec4899; left: 6%; bottom: 10%; }
+
 
 .glass-input {
   background: rgba(255, 255, 255, 0.02);

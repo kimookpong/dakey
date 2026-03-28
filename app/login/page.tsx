@@ -46,12 +46,8 @@ export default function LoginPage() {
         justifyContent: "center",
         padding: "1.5rem",
         position: "relative",
-        background: "#050505",
       }}
     >
-      {/* Floating Animated Spheres */}
-      <div className="sphere sphere-purple" />
-      <div className="sphere sphere-orange" />
       
       {/* Small accent spheres */}
       <div style={{ position: "fixed", top: "15%", right: "25%", width: "40px", height: "40px", background: "#f97316", borderRadius: "50%", filter: "blur(20px)", opacity: 0.4 }} />

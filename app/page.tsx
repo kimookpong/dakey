@@ -267,25 +267,32 @@ function HealthCheckBtn({ target }: { target: string }) {
 
 // ---- Modal ----
 function Modal({ title, onClose, children }: { title: string; onClose: () => void; children: React.ReactNode }) {
+  // Prevent background scrolling while modal is open and restore on close
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
   return (
     <div style={{
       position: "fixed", inset: 0, zIndex: 1000,
       display: "flex", alignItems: "center", justifyContent: "center",
       background: "rgba(0,0,0,0.4)", backdropFilter: "blur(8px)",
       padding: "1rem",
-    }} onClick={onClose}>
+    }}>
       <div className="glass-card" style={{
         borderRadius: "32px", padding: "2.5rem",
         width: "100%", maxWidth: "600px",
         maxHeight: "90vh", overflowY: "auto",
         border: "1px solid rgba(255,255,255,0.15)",
-      }} onClick={(e) => e.stopPropagation()}>
+      }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
           <h2 style={{ margin: 0, fontSize: "1.1rem", fontWeight: 700, color: "var(--text-primary)" }}>{title}</h2>
           <button onClick={onClose} style={{
             background: "transparent", border: "none", cursor: "pointer",
             color: "var(--text-muted)", padding: "4px",
-          }}>
+          }} aria-label="Close modal">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
             </svg>
@@ -903,7 +910,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#050505", position: "relative", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh",  position: "relative", overflowX: "hidden" }}>
       {/* Floating Animated Spheres */}
       <div className="sphere sphere-purple" />
       <div className="sphere sphere-orange" />
@@ -974,12 +981,7 @@ export default function Dashboard() {
             )}
             {activeTab === "transactions" && (
               <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }}>
-                {transactions.length === 0 ? (
-                  <div style={{ gridColumn: "1/-1", textAlign: "center", padding: "3rem", background: "var(--bg-card)", borderRadius: "15px", border: "1px dashed var(--border)" }}>
-                    <Icons.DollarSign />
-                    <p style={{ color: "var(--text-secondary)", marginTop: "1rem" }}>No transactions found. Start recording your expenses or income!</p>
-                  </div>
-                ) : (
+                {transactions.length === 0 ? <p style={{ gridColumn: "1/-1", textAlign: "center", color: "var(--text-muted)" }}>No transactions found.</p> : (
                   transactions.map(t => (
                     <div key={t.id} className="glass-card" style={{ border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", padding: "1.25rem 1.75rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
