@@ -312,7 +312,7 @@ function Field({ label, id, value, onChange, type = "text", placeholder = "", re
       <input
         id={id}
         type={type}
-        value={value}
+        value={value ?? ""}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
@@ -409,7 +409,7 @@ function ServerForm({ initial, onSave, onCancel }: {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 1rem" }}>
         <div style={{ marginBottom: "1rem" }}>
           <label style={{ display: "block", fontSize: "0.78rem", fontWeight: 500, color: "var(--text-secondary)", marginBottom: "0.4rem", textTransform: "uppercase" }}>Protocol *</label>
-          <select value={form.protocol} onChange={(e) => handleProtocolChange(e.target.value)} style={{ width: "100%", padding: "0.65rem", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", color: "var(--text-primary)" }}>
+          <select value={form.protocol ?? ""} onChange={(e) => handleProtocolChange(e.target.value)} style={{ width: "100%", padding: "0.65rem", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", color: "var(--text-primary)" }}>
             <option value="SSH">SSH</option>
             <option value="SFTP">SFTP</option>
             <option value="FTP">FTP</option>
@@ -483,7 +483,7 @@ function DomainForm({ initial, servers, onSave, onCancel }: {
         <label style={{ display: "block", fontSize: "0.78rem", fontWeight: 500, color: "var(--text-secondary)", marginBottom: "0.4rem", textTransform: "uppercase" }}>Host / IP (From Servers)</label>
         <div style={{ display: "flex", gap: "10px" }}>
           <select
-            value={form.host}
+            value={form.host ?? ""}
             onChange={(e) => setForm({ ...form, host: e.target.value })}
             style={{ flex: 1, padding: "0.65rem", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", color: "var(--text-primary)" }}
           >
@@ -638,14 +638,14 @@ function TransactionForm({ servers, domains, onSave, onCancel }: { servers: Serv
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         <div>
           <label style={{ display: "block", fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "4px" }}>Type</label>
-          <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
+          <select value={form.type ?? ""} onChange={(e) => setForm({ ...form, type: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
             <option value="Expense">Expense</option>
             <option value="Income">Income</option>
           </select>
         </div>
         <div>
           <label style={{ display: "block", fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "4px" }}>Category</label>
-          <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
+          <select value={form.category ?? ""} onChange={(e) => setForm({ ...form, category: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
             <option value="Hosting">Hosting</option>
             <option value="Domain">Domain</option>
             <option value="Service">Service</option>
@@ -663,14 +663,14 @@ function TransactionForm({ servers, domains, onSave, onCancel }: { servers: Serv
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         <div>
           <label style={{ display: "block", fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "4px" }}>Link Server</label>
-          <select value={form.serverId} onChange={(e) => setForm({ ...form, serverId: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
+          <select value={form.serverId ?? ""} onChange={(e) => setForm({ ...form, serverId: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
             <option value="">No Server</option>
             {servers.map(s => <option key={s.id} value={s.id}>{s.host}</option>)}
           </select>
         </div>
         <div>
           <label style={{ display: "block", fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "4px" }}>Link Domain</label>
-          <select value={form.domainId} onChange={(e) => setForm({ ...form, domainId: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
+          <select value={form.domainId ?? ""} onChange={(e) => setForm({ ...form, domainId: e.target.value })} style={{ width: "100%", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", padding: "10px", color: "white" }}>
             <option value="">No Domain</option>
             {domains.map(d => <option key={d.id} value={d.id}>{d.domain}</option>)}
           </select>
