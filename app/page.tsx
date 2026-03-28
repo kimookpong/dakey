@@ -425,6 +425,8 @@ function ServerForm({ initial, onSave, onCancel }: {
           <select value={form.os ?? ""} onChange={(e) => setForm({ ...form, os: e.target.value })} style={{ width: "100%", padding: "0.65rem", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", color: "var(--text-primary)" }}>
             <option value="">-- Select OS --</option>
             <option value="Linux">Linux</option>
+            <option value="Ubuntu">Ubuntu</option>
+            <option value="CentOS">CentOS</option>
             <option value="Windows">Windows</option>
             <option value="BSD">BSD</option>
             <option value="Other">Other</option>
