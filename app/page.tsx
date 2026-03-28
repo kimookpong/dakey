@@ -66,6 +66,7 @@ interface Server {
   id: number;
   protocol: string;
   host: string;
+  os?: string | null;
   port: number;
   username: string;
   password: string;
@@ -381,6 +382,7 @@ function ServerForm({ initial, onSave, onCancel }: {
   const [form, setForm] = useState({
     protocol: initial?.protocol || "SSH",
     host: initial?.host || "",
+    os: initial?.os || "",
     port: String(initial?.port || "22"),
     username: initial?.username || "",
     password: initial?.password || "",
@@ -416,6 +418,19 @@ function ServerForm({ initial, onSave, onCancel }: {
           </select>
         </div>
         <Field label="Port" id="s-port" value={form.port} onChange={(v) => setForm({ ...form, port: v })} type="number" placeholder="22" required />
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 1rem" }}>
+        <div style={{ marginBottom: "1rem" }}>
+          <label style={{ display: "block", fontSize: "0.78rem", fontWeight: 500, color: "var(--text-secondary)", marginBottom: "0.4rem", textTransform: "uppercase" }}>Operating System</label>
+          <select value={form.os ?? ""} onChange={(e) => setForm({ ...form, os: e.target.value })} style={{ width: "100%", padding: "0.65rem", background: "var(--bg-input)", border: "1px solid var(--border)", borderRadius: "8px", color: "var(--text-primary)" }}>
+            <option value="">-- Select OS --</option>
+            <option value="Linux">Linux</option>
+            <option value="Windows">Windows</option>
+            <option value="BSD">BSD</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div />
       </div>
       <Field label="Host / IP" id="s-host" value={form.host} onChange={(v) => setForm({ ...form, host: v })} placeholder="192.168.1.1 or domain.com" required />
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 1rem" }}>

@@ -10,7 +10,9 @@ export async function GET() {
 
   const servers = await prisma.server.findMany({
     include: { notes: { orderBy: { date: "desc" } } },
-    orderBy: { createdAt: "desc" },
+    // Order servers by host name alphabetically, and fall back to
+    // creation date for stable ordering when hosts are identical.
+    orderBy: [{ host: "asc" }, { createdAt: "desc" }],
   });
 
   const decrypted = servers.map((s: any) => ({
@@ -27,7 +29,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { protocol, host, port, username, password, description, basePath, note } = body;
+  const { protocol, host, os, port, username, password, description, basePath, note } = body;
 
   // Default port handling
   let finalPort = port ? Number(port) : null;
@@ -40,6 +42,7 @@ export async function POST(req: NextRequest) {
     data: {
       protocol,
       host,
+      os: os || null,
       port: finalPort || 22, // Fallback to 22 if still null
       username,
       password: encrypt(password),

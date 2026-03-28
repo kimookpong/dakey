@@ -13,7 +13,7 @@ export async function PUT(
 
   const { id } = await params;
   const body = await req.json();
-  const { protocol, host, port, username, password, description, basePath, note } = body;
+  const { protocol, host, os, port, username, password, description, basePath, note } = body;
 
   // Default port handling
   let finalPort = port ? Number(port) : null;
@@ -27,6 +27,7 @@ export async function PUT(
     data: {
       protocol,
       host,
+      os: os || null,
       port: finalPort || 22,
       username,
       password: encrypt(password),

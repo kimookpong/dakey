@@ -9,7 +9,10 @@ export async function GET() {
 
   const domains = await prisma.domain.findMany({
     include: { notes: { orderBy: { date: "desc" } } },
-    orderBy: { createdAt: "desc" },
+    // Order domains by host (alphabetically) and then by port (numerically).
+    // `host` is nullable in the schema, so put nulls last by using asc on host
+    // and asc on port. Secondary sort by createdAt for stable ordering.
+    orderBy: [{ host: "asc" }, { port: "asc" }, { createdAt: "desc" }],
   });
 
   return NextResponse.json(domains);
