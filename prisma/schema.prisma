@@ -1,0 +1,69 @@
+// Rahatlab - Server Credential Management System
+// Prisma 7: datasource url is configured in prisma.config.ts only
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Server {
+  id          Int      @id @default(autoincrement())
+  protocol    String
+  host        String
+  port        Int
+  username    String
+  password    String
+  description String?
+  basePath    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  notes       UpdateNote[]
+  transactions Transaction[]
+}
+
+model Domain {
+  id          Int      @id @default(autoincrement())
+  domain      String
+  language    String?
+  service     String?
+  host        String?
+  port        Int?
+  directory   String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  notes       UpdateNote[]
+  transactions Transaction[]
+}
+
+model AdminSession {
+  id        Int      @id @default(autoincrement())
+  sessionId String   @unique
+  updatedAt DateTime @updatedAt
+}
+
+model UpdateNote {
+  id        Int      @id @default(autoincrement())
+  date      DateTime @default(now())
+  content   String
+  serverId  Int?
+  server    Server?  @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  domainId  Int?
+  domain    Domain?  @relation(fields: [domainId], references: [id], onDelete: Cascade)
+}
+
+model Transaction {
+  id          Int      @id @default(autoincrement())
+  date        DateTime @default(now())
+  type        String   // "Income" or "Expense"
+  amount      Float
+  category    String   // e.g., "Hosting", "Domain", "Setup", "Service"
+  description String?
+  serverId    Int?
+  server      Server?  @relation(fields: [serverId], references: [id], onDelete: SetNull)
+  domainId    Int?
+  domain      Domain?  @relation(fields: [domainId], references: [id], onDelete: SetNull)
+}
