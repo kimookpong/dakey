@@ -4,7 +4,7 @@ import { verifyToken } from "@/lib/auth";
 const COOKIE_NAME = "rahatlab_session";
 const PUBLIC_PATHS = ["/login", "/api/auth/login"];
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Allow public paths

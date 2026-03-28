@@ -112,7 +112,7 @@ export default function LoginPage() {
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)" }}>
-                <input type="checkbox" style={{ accentColor: "#f97316" }} checked /> Remember me
+                <input type="checkbox" style={{ accentColor: "#f97316" }} defaultChecked /> Remember me
              </label>
           </div>
  
@@ -144,15 +144,6 @@ export default function LoginPage() {
             {loading ? "Signing in..." : "Login"}
           </button>
 
-          <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-             <a href="#" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", textDecoration: "none" }}>Forgot Password?</a>
-          </div>
-
-          <div style={{ textAlign: "center", marginTop: "4rem" }}>
-             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", margin: 0 }}>
-               Don't have an account? <span style={{ color: "#f97316", fontWeight: 700, cursor: "pointer" }}>Signup</span>
-             </p>
-          </div>
         </form>
       </div>
     </div>
