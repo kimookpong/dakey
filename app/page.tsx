@@ -560,6 +560,11 @@ function ServerCard({ server, onEdit, onDelete, onDuplicate, linkedDomains }: { 
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <Icons.Globe />
           <span style={{ fontWeight: 600, color: "#93c5fd" }}>{server.host}</span>
+          {server.os && (
+            <span style={{ marginLeft: "8px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.04)", color: "var(--text-muted)", borderRadius: "8px", padding: "4px 8px", fontSize: "0.72rem", fontWeight: 700 }}>
+              {server.os}
+            </span>
+          )}
           <CopyBtn value={server.host} label="host" />
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "15px", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
