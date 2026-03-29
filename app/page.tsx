@@ -2351,9 +2351,12 @@ export default function Dashboard() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "2rem 2.5rem",
           position: "relative",
           zIndex: 10,
+
+          padding: "1.5rem", 
+          maxWidth: "1200px", 
+          margin: "0 auto" 
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
