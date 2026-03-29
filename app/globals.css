@@ -57,7 +57,7 @@ body {
 .sphere-purple {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle at center, #8b5cf6, transparent);
+  background: #8b5cf6;
   top: -100px;
   left: -50px;
   animation: float-diagonal 20s infinite alternate ease-in-out;
@@ -66,7 +66,7 @@ body {
 .sphere-orange {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle at center, #f97316, transparent);
+  background: #f97316;
   bottom: -50px;
   right: -100px;
   animation: float-slow 25s infinite alternate-reverse ease-in-out;
