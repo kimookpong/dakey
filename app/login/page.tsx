@@ -48,10 +48,7 @@ export default function LoginPage() {
         position: "relative",
       }}
     >
-      
-      {/* Small accent spheres */}
-      <div style={{ position: "fixed", top: "15%", right: "25%", width: "40px", height: "40px", background: "#f97316", borderRadius: "50%", filter: "blur(20px)", opacity: 0.4 }} />
-      <div style={{ position: "fixed", bottom: "35%", left: "15%", width: "30px", height: "30px", background: "#8b5cf6", borderRadius: "50%", filter: "blur(15px)", opacity: 0.4 }} />
+
 
       <div className="glass-card" style={{
         width: "100%", maxWidth: "400px",
@@ -59,7 +56,6 @@ export default function LoginPage() {
         padding: "3.5rem 2.5rem",
         position: "relative",
         textAlign: "center",
-        border: "1px solid rgba(255,255,255,0.15)",
       }}>
         {/* Header */}
         <div style={{ marginBottom: "2.5rem" }}>
@@ -70,7 +66,7 @@ export default function LoginPage() {
             Welcome back please login to your account
           </p>
         </div>
- 
+
         <form onSubmit={handleSubmit} style={{ textAlign: "left" }}>
           <div style={{ marginBottom: "1.25rem", position: "relative" }}>
             <input
@@ -88,7 +84,7 @@ export default function LoginPage() {
               <Icons.User />
             </div>
           </div>
- 
+
           <div style={{ marginBottom: "1rem", position: "relative" }}>
             <input
               id="password"
@@ -102,16 +98,16 @@ export default function LoginPage() {
               style={{ width: "100%", paddingRight: "3rem" }}
             />
             <div style={{ position: "absolute", right: "1rem", top: "50%", transform: "translateY(-50%)", color: "rgba(255,255,255,0.4)" }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
             </div>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
-             <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)" }}>
-                <input type="checkbox" style={{ accentColor: "#f97316" }} defaultChecked /> Remember me
-             </label>
+            <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)" }}>
+              <input type="checkbox" style={{ accentColor: "#f97316" }} defaultChecked /> Remember me
+            </label>
           </div>
- 
+
           {error && (
             <div style={{
               background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)",
@@ -120,12 +116,12 @@ export default function LoginPage() {
               display: "flex", alignItems: "center", gap: "0.5rem",
             }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
               {error}
             </div>
           )}
- 
+
           <button
             id="login-btn"
             type="submit"

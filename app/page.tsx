@@ -656,50 +656,50 @@ function Modal({
           overflow: "hidden",
         }}
       >
-        
-          <div
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "0.5rem",
+          }}
+        >
+          <h2
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: "0.5rem",
+              margin: 0,
+              fontSize: "1.1rem",
+              fontWeight: 700,
+              color: "var(--text-primary)",
             }}
           >
-            <h2
-              style={{
-                margin: 0,
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-              }}
+            {title}
+          </h2>
+          <button
+            onClick={onClose}
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+              color: "var(--text-muted)",
+              padding: "4px",
+            }}
+            aria-label="Close modal"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
             >
-              {title}
-            </h2>
-            <button
-              onClick={onClose}
-              style={{
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                color: "var(--text-muted)",
-                padding: "4px",
-              }}
-              aria-label="Close modal"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-          </div>
-          <div
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div
           style={{
             flex: "1 1 auto",
             overflowY: "auto",
@@ -1317,7 +1317,6 @@ function ServerCard({
         gap: "1.25rem",
         transition: "all 0.3s ease",
         position: "relative",
-        border: "1px solid rgba(255,255,255,0.08)",
       }}
     >
       <div
@@ -1936,7 +1935,6 @@ function DomainCard({
         gap: "1.25rem",
         transition: "all 0.3s ease",
         position: "relative",
-        border: "1px solid rgba(255,255,255,0.08)",
       }}
     >
       <div
@@ -2354,9 +2352,9 @@ export default function Dashboard() {
           position: "relative",
           zIndex: 10,
 
-          padding: "1.5rem", 
-          maxWidth: "1200px", 
-          margin: "0 auto" 
+          padding: "1.5rem",
+          maxWidth: "1200px",
+          margin: "0 auto"
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -2465,7 +2463,6 @@ export default function Dashboard() {
                 display: "flex",
                 alignItems: "center",
                 gap: "1.25rem",
-                border: "1px solid rgba(255,255,255,0.1)",
               }}
             >
               <div
@@ -2513,7 +2510,6 @@ export default function Dashboard() {
               padding: "6px",
               borderRadius: "18px",
               display: "flex",
-              border: "1px solid rgba(255,255,255,0.1)",
             }}
           >
             <button
@@ -2738,7 +2734,6 @@ export default function Dashboard() {
                       key={t.id}
                       className="glass-card"
                       style={{
-                        border: "1px solid rgba(255,255,255,0.06)",
                         borderRadius: "20px",
                         padding: "1.25rem 1.75rem",
                         display: "flex",

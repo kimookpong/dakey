@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-       <head>
+      <head>
         <link rel="icon" href="/logo.png" sizes="any" />
       </head>
       <body>
@@ -29,8 +29,10 @@ export default function RootLayout({
           <div className="plate-circle plate-circle-5" />
         </div>
         {/* Small accent spheres */}
-        <div style={{ position: "fixed", top: "15%", right: "25%", width: "40px", height: "40px", background: "#f97316", borderRadius: "50%", filter: "blur(20px)", opacity: 0.4, pointerEvents: "none", zIndex: -1 }} />
-        <div style={{ position: "fixed", bottom: "35%", left: "15%", width: "30px", height: "30px", background: "#8b5cf6", borderRadius: "50%", filter: "blur(15px)", opacity: 0.4, pointerEvents: "none", zIndex: -1 }} />
+        <div className="sphere" style={{ top: "10%", right: "30%", width: "60px", height: "60px", background: "#f97316", opacity: 0.3, animation: "float-mid 18s infinite ease-in-out" }} />
+        <div className="sphere" style={{ bottom: "35%", left: "15%", width: "80px", height: "80px", background: "#8b5cf6", opacity: 0.3, animation: "float-diagonal 22s infinite alternate ease-in-out" }} />
+        <div className="sphere" style={{ top: "40%", left: "10%", width: "40px", height: "40px", background: "#10b981", opacity: 0.2, animation: "float-orbital 12s infinite linear" }} />
+        <div className="sphere" style={{ bottom: "15%", right: "20%", width: "50px", height: "50px", background: "#06b6d4", opacity: 0.2, animation: "pulse-subtle 10s infinite ease-in-out" }} />
 
         {children}
       </body>
