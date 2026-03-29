@@ -662,7 +662,7 @@ function Modal({
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginBottom: "1.5rem",
+              marginBottom: "0.5rem",
             }}
           >
             <h2
@@ -703,7 +703,7 @@ function Modal({
           style={{
             flex: "1 1 auto",
             overflowY: "auto",
-            padding: "1.6rem",
+            padding: "0 0.5rem 0 0",
             height: "100%",
           }}
         >
@@ -2351,7 +2351,6 @@ export default function Dashboard() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: "2rem",
           padding: "2rem 2.5rem",
           position: "relative",
           zIndex: 10,
