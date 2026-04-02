@@ -60,7 +60,7 @@ export default function LoginPage() {
         {/* Header */}
         <div style={{ marginBottom: "2.5rem" }}>
           <h1 style={{ fontSize: "2.25rem", fontWeight: 800, margin: "0 0 0.5rem", color: "white", letterSpacing: "-0.02em" }}>
-            Login
+            DaKey
           </h1>
           <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9rem", margin: 0 }}>
             Welcome back please login to your account
