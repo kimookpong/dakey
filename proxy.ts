@@ -12,6 +12,11 @@ export async function proxy(req: NextRequest) {
     return NextResponse.next();
   }
 
+  // Allow requests for static files in `/public` (have an extension like .png, .svg, .ico)
+  if (pathname.includes(".")) {
+    return NextResponse.next();
+  }
+
   // Check session cookie
   const token = req.cookies.get(COOKIE_NAME)?.value;
   const payload = token ? await verifyToken(token) : null;
