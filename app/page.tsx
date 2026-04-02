@@ -656,7 +656,6 @@ function Modal({
           overflow: "hidden",
         }}
       >
-
         <div
           style={{
             display: "flex",
@@ -1307,7 +1306,7 @@ function ServerCard({
   const [showLinked, setShowLinked] = useState(false);
 
   return (
-    <div
+   <div
       className="glass-card"
       style={{
         borderRadius: "24px",
@@ -1388,31 +1387,53 @@ function ServerCard({
           alignItems: "flex-start",
         }}
       >
-        <ProtocolBadge protocol={server.protocol} />
-      </div>
-
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <Icons.Globe />
-          <span style={{ fontWeight: 600, color: "#93c5fd" }}>
-            {server.host}
-          </span>
+        <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+          <ProtocolBadge protocol={server.protocol} />
           {server.os && (
             <span
               style={{
-                marginLeft: "8px",
                 background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.04)",
                 color: "var(--text-muted)",
-                borderRadius: "8px",
-                padding: "4px 8px",
+                borderRadius: "6px",
+                padding: "3px 9px",
                 fontSize: "0.72rem",
                 fontWeight: 700,
+                letterSpacing: "0.06em",
               }}
             >
               {server.os}
             </span>
           )}
+        </div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            color: "#93c5fd",
+          }}
+        >
+          <div
+            style={{
+              width: "32px",
+              height: "32px",
+              borderRadius: "8px",
+              background: "rgba(16,72,185,0.1)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#93c5fd",
+            }}
+          >
+            <Icons.Server />
+          </div>
+          <span style={{ fontWeight: 600, color: "#93c5fd" }}>
+            {server.host}
+          </span>
+
           <CopyBtn value={server.host} label="host" />
         </div>
         <div
@@ -1425,7 +1446,7 @@ function ServerCard({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <Icons.Hash /> {server.port}
+            Port: {server.port}
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <Icons.User /> {server.username}
@@ -2354,7 +2375,7 @@ export default function Dashboard() {
 
           padding: "1.5rem",
           maxWidth: "1200px",
-          margin: "0 auto"
+          margin: "0 auto",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
