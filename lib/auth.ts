@@ -2,7 +2,7 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
 const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET!);
-const COOKIE_NAME = "rahatlab_session";
+const COOKIE_NAME = "dakey_session";
 
 export async function signToken(sessionId: string): Promise<string> {
   return await new SignJWT({ role: "admin", sessionId })

@@ -1,6 +1,6 @@
-# RahatLab System Context
+# DaKey System Context
 
-RahatLab is a robust, mobile-responsive server and domain management system built for high-security and audit-ready environments.
+DaKey is a robust, mobile-responsive server and domain management system built for high-security and audit-ready environments.
 
 ## 🛠 Tech Stack
 - **Framework**: Next.js 15 (App Router)

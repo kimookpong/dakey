@@ -1,6 +1,6 @@
-# 🚀 RahatLab Server Management System
+# 🚀 DaKey Server Management System
 
-RahatLab is a premium, secure, and mobile-responsive dashboard designed for centralized management of server credentials and domain health monitoring. Built with modern web technologies, it offers a sleek "Glassmorphism" interface and robust security features.
+DaKey is a premium, secure, and mobile-responsive dashboard designed for centralized management of server credentials and domain health monitoring. Built with modern web technologies, it offers a sleek "Glassmorphism" interface and robust security features.
 
 ---
 
@@ -45,8 +45,8 @@ RahatLab is a premium, secure, and mobile-responsive dashboard designed for cent
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/kimookpong/rahatlab.git
-   cd rahatlab
+   git clone https://github.com/kimookpong/dakey.git
+   cd dakey
    ```
 
 2. **Install dependencies**:
@@ -57,7 +57,7 @@ RahatLab is a premium, secure, and mobile-responsive dashboard designed for cent
 3. **Environment Setup**:
    Create a `.env` file in the root directory:
    ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/rahatlab"
+   DATABASE_URL="postgresql://user:password@localhost:5432/dakey"
    ADMIN_USERNAME="admin"
    ADMIN_PASSWORD="your_secure_password"
    JWT_SECRET="your_jwt_secret"
@@ -87,7 +87,7 @@ RahatLab is a premium, secure, and mobile-responsive dashboard designed for cent
 ---
 
 ## 📜 License
-This project is private and intended for RahatLab internal use.
+This project is private and intended for DaKey internal use.
 
 ---
 *Developed with ❤️ by Antigravity*

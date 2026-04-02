@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyToken } from "@/lib/auth";
 
-const COOKIE_NAME = "rahatlab_session";
+const COOKIE_NAME = "dakey_session";
 const PUBLIC_PATHS = ["/login", "/api/auth/login"];
 
 export async function proxy(req: NextRequest) {

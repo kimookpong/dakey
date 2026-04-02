@@ -1,4 +1,4 @@
-// Rahatlab - Server Credential Management System
+// DaKey - Server Credential Management System
 // Prisma 7: datasource url is configured in prisma.config.ts only
 
 generator client {

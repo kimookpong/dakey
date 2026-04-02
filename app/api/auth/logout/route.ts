@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const COOKIE_NAME = "rahatlab_session";
+const COOKIE_NAME = "dakey_session";
 
 export async function POST() {
   const response = NextResponse.json({ success: true });

@@ -2384,7 +2384,7 @@ export default function Dashboard() {
               letterSpacing: "-0.025em",
             }}
           >
-            RahatLab
+            DaKey
           </h1>
         </div>
         <button

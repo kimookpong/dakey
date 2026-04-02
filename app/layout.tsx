@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RahatLab - Server Manager",
+  title: "DaKey - Server Manager",
   description: "Secure server credential and domain management system",
 };
 

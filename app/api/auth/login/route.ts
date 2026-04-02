@@ -3,7 +3,7 @@ import { signToken } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import crypto from "crypto";
 
-const COOKIE_NAME = "rahatlab_session";
+const COOKIE_NAME = "dakey_session";
 
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
